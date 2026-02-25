@@ -20,17 +20,17 @@ import {
   Target,
   DollarSign
 } from "lucide-react";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 
-const Section = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <section className={`py-16 px-6 md:py-24 ${className}`}>
+const Section = ({ children, className = "", id }: { children: ReactNode; className?: string; id?: string }) => (
+  <section id={id} className={`py-16 px-6 md:py-24 ${className}`}>
     <div className="max-w-4xl mx-auto">
       {children}
     </div>
   </section>
 );
 
-const Button = ({ children, className = "", variant = "primary" }: { children: React.ReactNode; className?: string; variant?: "primary" | "secondary" }) => {
+const Button = ({ children, className = "", variant = "primary" }: { children: ReactNode; className?: string; variant?: "primary" | "secondary" }) => {
   const baseStyles = "inline-block text-center px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-md active:scale-95";
   const variants = {
     primary: "bg-brand-coral text-white hover:bg-opacity-90",
@@ -44,7 +44,7 @@ const Button = ({ children, className = "", variant = "primary" }: { children: R
   );
 };
 
-const Card = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
+const Card = ({ children, className = "" }: { children: ReactNode; className?: string }) => (
   <div className={`bg-white p-8 rounded-2xl shadow-sm border border-black/5 hover:shadow-md transition-shadow duration-300 ${className}`}>
     {children}
   </div>
